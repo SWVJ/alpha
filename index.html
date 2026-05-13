@@ -18,7 +18,7 @@
         .data-btn:hover { background: #555; color: white; }
         span { font-style: italic; color: #666; font-size: 0.8em; margin-left: 10px; }
 
-        /* --- NEW CSS FOR THE EYE ICON --- */
+        /* --- CSS FOR THE EYE ICON --- */
         .password-container {
             position: relative;
             display: inline-block;
@@ -27,7 +27,7 @@
 
         .password-container input {
             margin: 0;
-            padding-right: 40px; /* Make space so text doesn't type under the eye */
+            padding-right: 40px; 
         }
 
         .toggle-password {
@@ -58,7 +58,7 @@
         <p>This portal is encrypted. Enter the decryption key to proceed.</p>
         
         <div class="password-container">
-            <input type="password" id="passkey" placeholder="Enter Password">
+            <input type="password" id="passkey" placeholder="Enter Password" onkeydown="if(event.key === 'Enter') decryptPage()">
             <button type="button" class="toggle-password" onclick="toggleVisibility()">👁️</button>
         </div>
         
@@ -70,20 +70,20 @@
     <div id="secure-content"></div>
 
     <script>
-        // REPLACE THE TEXT BELOW WITH YOUR GENERATED GIBBERISH (Keep the quotes!)
+        // Your generated encrypted payload
         var encryptedHTML = "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"; 
 
-        // NEW JAVASCRIPT FUNCTION FOR THE EYE ICON
+        // JAVASCRIPT FUNCTION FOR THE EYE ICON
         function toggleVisibility() {
             var passwordInput = document.getElementById("passkey");
             var toggleBtn = document.querySelector(".toggle-password");
             
             if (passwordInput.type === "password") {
                 passwordInput.type = "text";
-                toggleBtn.textContent = "🙈"; // Monkey covering eyes when text is visible
+                toggleBtn.textContent = "🙈"; 
             } else {
                 passwordInput.type = "password";
-                toggleBtn.textContent = "👁️"; // Back to open eye when hidden
+                toggleBtn.textContent = "👁️"; 
             }
         }
 
