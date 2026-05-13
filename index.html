@@ -13,7 +13,22 @@
         .data-btn:hover { background: #555; color: white; }
         span { font-style: italic; color: #666; font-size: 0.8em; margin-left: 10px; }
     </style>
-</head>
+
+    <script>
+        var correctPassword = "aditya2026"; // CHANGE THIS TO YOUR PREFERRED PASSWORD
+        var userPassword = prompt("Please enter the password to access this page:");
+        
+        while (userPassword !== correctPassword) {
+            if (userPassword === null) {
+                // If the user clicks Cancel, the page will be replaced with an Access Denied message
+                document.write("<body style='background:#1a1a1a; color:white; text-align:center; padding-top:100px; font-family:monospace;'><h1>Access Denied.</h1><p>Reload the page and enter the correct password to continue.</p></body>");
+                window.stop();
+                break;
+            }
+            userPassword = prompt("Incorrect password. Please try again:");
+        }
+    </script>
+    </head>
 <body>
 
 <div class="header">
